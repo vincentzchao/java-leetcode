@@ -1,4 +1,8 @@
+# Intellij IDEA
 .idea
 target
+
+# macOS
+.DS_Store
 
 
