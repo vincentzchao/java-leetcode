@@ -2,6 +2,7 @@ package com.binchaos.common.tree;
 
 /**
  * Tree 的 node
+ * 代码来自 LeetCode 官方
  *
  * @author Vincent
  */
@@ -22,14 +23,4 @@ public class TreeNode {
 		this.left = left;
 		this.right = right;
 	}
-
-	// ====================================== toString
-
-	@Override
-	public String toString() {
-		return TreeUtils.toString(this);
-	}
-
-	// ====================================== static methods
-
 }

@@ -10,9 +10,8 @@ import java.util.List;
 /**
  * @author Vincent
  */
-public class SolutionRecursionTest {
-
-	private final SolutionRecursion solution = new SolutionRecursion();
+public class SolutionIterationTest {
+	private final SolutionIteration solution = new SolutionIteration();
 
 	@Test
 	public void case1() {
