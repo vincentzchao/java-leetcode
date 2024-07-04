@@ -14,6 +14,7 @@ public class TreeUtils {
 	private static final String LEFT_BRACKET = "[";
 	private static final String RIGHT_BRACKET = "]";
 	private static final String EMPTY_STR = "";
+	private static final String SPACE_STR = " ";
 	private static final String VAL_SEPARATOR = ",";
 	private static final String NULL_STR = "null";
 
@@ -27,7 +28,7 @@ public class TreeUtils {
 
 	public static String toString(List<Integer> resultList) {
 		// 去掉空格
-		return resultList.toString().replace(" ", "");
+		return resultList.toString().replace(SPACE_STR, "");
 	}
 
 	// ====================================================================================
@@ -78,8 +79,10 @@ public class TreeUtils {
 		if ((levelOrderValSeq == null) || (levelOrderValSeq.isEmpty())) {
 			throw new InvalidParameterException("节点序列格式错误，格式应如：[3,9,20,null,null,15,7,22,44]");
 		}
-
-		String cleanValSeq = levelOrderValSeq.replace(LEFT_BRACKET, EMPTY_STR).replace(RIGHT_BRACKET, EMPTY_STR);
+		
+		// todo: 如下代码并不完美，没有考虑字符串中空格以外的空白字符的问题
+		String cleanValSeq = levelOrderValSeq.replace(SPACE_STR, EMPTY_STR).replace(LEFT_BRACKET, EMPTY_STR)
+				.replace(RIGHT_BRACKET, EMPTY_STR);
 		String[] valArr = cleanValSeq.split(VAL_SEPARATOR);
 
 		// 如果只有一个字符串，且这个字符串为空，说明原始字符串为 []

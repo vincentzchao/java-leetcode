@@ -1,4 +1,4 @@
-package com.binchaos.p102;
+package com.binchaos.medium.p102;
 
 import com.binchaos.common.tree.TreeNode;
 import com.binchaos.common.tree.TreeUtils;
@@ -10,8 +10,9 @@ import java.util.List;
 /**
  * @author Vincent
  */
-public class SolutionIterationTest {
-	private final SolutionIteration solution = new SolutionIteration();
+public class SolutionRecursionTest {
+
+	private final SolutionRecursion solution = new SolutionRecursion();
 
 	@Test
 	public void case1() {
