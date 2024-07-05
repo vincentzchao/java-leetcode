@@ -1,5 +1,6 @@
 package com.binchaos.medium.p95;
 
+import com.binchaos.common.tag.TagBinarySearchTree;
 import com.binchaos.common.tag.TagBinaryTree;
 import com.binchaos.common.tree.TreeNode;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * @author Vincent
  */
 @TagBinaryTree
+@TagBinarySearchTree
 public class P95Solution {
 	public List<TreeNode> generateTrees(int n) {
 		if (n <= 0) {
