@@ -1,7 +1,11 @@
 package com.binchaos.common.tree;
 
-import java.security.InvalidParameterException;
-import java.util.*;
+import com.binchaos.common.InputUtils;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * 树相关工具类
@@ -9,14 +13,7 @@ import java.util.*;
  * @author Vincent
  */
 public class TreeUtils {
-	private static final String EMPTY_TREE_STR = "[]";
-
-	private static final String LEFT_BRACKET = "[";
-	private static final String RIGHT_BRACKET = "]";
-	private static final String EMPTY_STR = "";
 	private static final String SPACE_STR = " ";
-	private static final String VAL_SEPARATOR = ",";
-	private static final String NULL_STR = "null";
 
 	private TreeUtils() {
 		// 无参构造
@@ -75,36 +72,9 @@ public class TreeUtils {
 	// ================ 生成二叉树
 	// ====================================================================================
 
-	public static TreeNode createBinaryTree(String levelOrderValSeq) {
-		if ((levelOrderValSeq == null) || (levelOrderValSeq.isEmpty())) {
-			throw new InvalidParameterException("节点序列格式错误，格式应如：[3,9,20,null,null,15,7,22,44]");
-		}
-		
-		// todo: 如下代码并不完美，没有考虑字符串中空格以外的空白字符的问题
-		String cleanValSeq = levelOrderValSeq.replace(SPACE_STR, EMPTY_STR).replace(LEFT_BRACKET, EMPTY_STR)
-				.replace(RIGHT_BRACKET, EMPTY_STR);
-		String[] valArr = cleanValSeq.split(VAL_SEPARATOR);
-
-		// 如果只有一个字符串，且这个字符串为空，说明原始字符串为 []
-		if ((valArr.length == 1) && (Objects.equals(valArr[0], EMPTY_STR))) {
-			return null;
-		}
-
-		List<Integer> levelOrderValList = new ArrayList<>();
-		for (String val : valArr) {
-			try {
-				if (val.equals(NULL_STR)) {
-					levelOrderValList.add(null);
-				} else {
-					Integer intVal = new Integer(val);
-					levelOrderValList.add(intVal);
-				}
-			} catch (Exception e) {
-				throw new InvalidParameterException(String.format("[%s] 为非法值，值必须是整数", val));
-			}
-		}
-
-		return createBinaryTree(levelOrderValList);
+	public static TreeNode createBinaryTree(String intValSeq) {
+		List<Integer> intValList = InputUtils.intSeq2List(intValSeq);
+		return createBinaryTree(intValList);
 	}
 
 	/**
@@ -179,7 +149,7 @@ public class TreeUtils {
 
 	private static TreeNode createTreeNode(List<Integer> levelOrderValList, int index) {
 		if (index < 0) {
-			throw new InvalidParameterException("index 不能小于 0");
+			throw new IllegalArgumentException("index 不能小于 0");
 		}
 
 		// 如果越界就给 null
