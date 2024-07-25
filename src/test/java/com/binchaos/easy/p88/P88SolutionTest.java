@@ -1,6 +1,6 @@
 package com.binchaos.easy.p88;
 
-import com.binchaos.common.InputUtils;
+import com.binchaos.common.array.ArrayUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -36,10 +36,10 @@ public class P88SolutionTest {
 	}
 
 	private void test(String intSeq1, int m, String intSeq2, int n, String expected) {
-		int[] nums1 = InputUtils.intSeq2Array(intSeq1);
-		int[] nums2 = InputUtils.intSeq2Array(intSeq2);
+		int[] nums1 = ArrayUtils.intSeq2Array(intSeq1);
+		int[] nums2 = ArrayUtils.intSeq2Array(intSeq2);
 
 		solution.merge(nums1, m, nums2, n);
-		Assert.assertEquals(expected, InputUtils.array2Seq(nums1));
+		Assert.assertEquals(expected, ArrayUtils.array2Seq(nums1));
 	}
 }

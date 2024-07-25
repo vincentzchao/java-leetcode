@@ -1,6 +1,7 @@
 package com.binchaos.medium.p102;
 
 import com.binchaos.common.tag.TagBinaryTree;
+import com.binchaos.common.tag.TagRecursion;
 import com.binchaos.common.tree.TreeNode;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.List;
  * @author Vincent
  */
 @TagBinaryTree
+@TagRecursion
 public class SolutionRecursion {
 	public List<List<Integer>> levelOrder(TreeNode root) {
 		List<List<Integer>> resultList = new ArrayList<>();

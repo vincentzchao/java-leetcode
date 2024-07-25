@@ -1,6 +1,6 @@
 package com.binchaos.medium.p3101;
 
-import com.binchaos.common.InputUtils;
+import com.binchaos.common.array.ArrayUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,7 +31,7 @@ public class P3101SolutionTest {
 	}
 
 	private void verify(String input, int expected) {
-		int[] nums = InputUtils.intSeq2Array(input);
+		int[] nums = ArrayUtils.intSeq2Array(input);
 		Assert.assertEquals(expected, solution.countAlternatingSubarrays(nums));
 	}
 

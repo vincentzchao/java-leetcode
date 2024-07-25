@@ -1,4 +1,4 @@
-package com.binchaos.common;
+package com.binchaos.common.array;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  * @author Vincent
  */
-public class InputUtils {
+public class ArrayUtils {
 	private static final String EMPTY_SEQ = "[]";
 
 	private static final String LEFT_BRACKET = "[";
@@ -21,7 +21,7 @@ public class InputUtils {
 
 	private static final String SPACE_STR = " ";
 
-	private InputUtils() {
+	private ArrayUtils() {
 		// 无参构造
 	}
 

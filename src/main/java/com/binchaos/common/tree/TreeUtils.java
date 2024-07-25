@@ -1,6 +1,6 @@
 package com.binchaos.common.tree;
 
-import com.binchaos.common.InputUtils;
+import com.binchaos.common.array.ArrayUtils;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -73,7 +73,7 @@ public class TreeUtils {
 	// ====================================================================================
 
 	public static TreeNode createBinaryTree(String intValSeq) {
-		List<Integer> intValList = InputUtils.intSeq2List(intValSeq);
+		List<Integer> intValList = ArrayUtils.intSeq2List(intValSeq);
 		return createBinaryTree(intValList);
 	}
 

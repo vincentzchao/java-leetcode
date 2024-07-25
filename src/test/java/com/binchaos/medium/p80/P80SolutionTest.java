@@ -1,6 +1,6 @@
 package com.binchaos.medium.p80;
 
-import com.binchaos.common.InputUtils;
+import com.binchaos.common.array.ArrayUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -33,8 +33,8 @@ public class P80SolutionTest {
 	}
 
 	private void test(String intSeq, String expectedIntSeq) {
-		int[] expectedNums = InputUtils.intSeq2Array(expectedIntSeq);
-		int[] nums = InputUtils.intSeq2Array(intSeq);
+		int[] expectedNums = ArrayUtils.intSeq2Array(expectedIntSeq);
+		int[] nums = ArrayUtils.intSeq2Array(intSeq);
 
 		int k = solution.removeDuplicates(nums);
 		Assert.assertEquals(expectedNums.length, k);

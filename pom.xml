@@ -17,7 +17,8 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13</version>
-            <scope>test</scope>
+            <!-- 这里设为 compile 是为了让生产代码也可以使用到此依赖 -->
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
